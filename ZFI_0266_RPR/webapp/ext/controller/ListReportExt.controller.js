@@ -16,7 +16,7 @@ sap.ui.controller("ZFI_0266_RPR.zfi_0266_rpr.ext.controller.ListReportExt", {
 		//	var nYear = new Date().getFullYear();
 			var nYear = new Date(new Date().setFullYear(new Date().getFullYear() + 1)).getFullYear();
 			this.getView().byId(smartFilterID).setFilterData({
-				"$Parameter.p_fiscalyear": nYear.toString()
+				"$Parameter.p_fiscalyear": nYear.toString();
 			});
 		}if( Object.keys(filterData)[1] !== "$Parameter.p_postingperiod"){
 			var nPeriod = new Date().getMonth() + 1;
