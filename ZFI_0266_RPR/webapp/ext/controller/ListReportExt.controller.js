@@ -22,7 +22,7 @@ sap.ui.controller("ZFI_0266_RPR.zfi_0266_rpr.ext.controller.ListReportExt", {
 			var nPeriod = new Date().getMonth() + 1;
 				nPeriod = nPeriod === 1 ? nPeriod = 12 : nPeriod - 1;
 			this.getView().byId(smartFilterID).setFilterData({
-				"$Parameter.p_postingperiod": nPeriod.toString()
+				"$Parameter.p_postingperiod": nPeriod.toString();
 			});
 			sap.m.MessageToast.show(messageMdl.getProperty("DefaultFilterMsg"));
 			this.byId(smartTableId).rebindTable();
