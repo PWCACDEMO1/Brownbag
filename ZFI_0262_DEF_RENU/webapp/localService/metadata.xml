@@ -1,0 +1,40 @@
+<edmx:Edmx xmlns:edmx="http://schemas.microsoft.com/ado/2007/06/edmx"
+	xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata" xmlns:sap="http://www.sap.com/Protocols/SAPData" Version="1.0">
+	<edmx:Reference xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx"
+		Uri="./IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_COMMON',Version='0001',SAP__Origin='LOCAL')/$value"><edmx:Include Namespace="com.sap.vocabularies.Common.v1" Alias="Common"/></edmx:Reference>
+	<edmx:Reference xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx"
+		Uri="./IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_CAPABILITIES',Version='0001',SAP__Origin='LOCAL')/$value"><edmx:Include Namespace="Org.OData.Capabilities.V1" Alias="Capabilities"/></edmx:Reference>
+	<edmx:Reference xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx"
+		Uri="./IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_COMMUNICATION',Version='0001',SAP__Origin='LOCAL')/$value"><edmx:Include Namespace="com.sap.vocabularies.Communication.v1" Alias="Communication"/></edmx:Reference>
+	<edmx:Reference xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx"
+		Uri="./IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_AGGREGATION',Version='0001',SAP__Origin='LOCAL')/$value"><edmx:Include Namespace="Org.OData.Aggregation.V1" Alias="Aggregation"/></edmx:Reference>
+	<edmx:Reference xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx"
+		Uri="./IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_PERSONALDATA',Version='0001',SAP__Origin='LOCAL')/$value"><edmx:Include Namespace="com.sap.vocabularies.PersonalData.v1" Alias="PersonalData"/></edmx:Reference>
+	<edmx:DataServices m:DataServiceVersion="2.0">
+		<Schema xmlns="http://schemas.microsoft.com/ado/2008/09/edm" Namespace="ZFI_0262_DEF_REVENUE_SRV" xml:lang="en" sap:schema-version="1">
+			<EntityType Name="ZFI_COV_DEF_REVENUEType" sap:label="Consumption View for Deferred Revenue" sap:content-version="1">
+				<Key><PropertyRef Name="Pspid"/></Key><Property Name="Pspid" Type="Edm.String" Nullable="false" MaxLength="24" sap:display-format="UpperCase" sap:label="Project definition"/><Property Name="ProjectDescription" Type="Edm.String" MaxLength="40" sap:label="Description"
+					sap:quickinfo="PS: Short description (1st text line)"/><Property Name="ProjectStatus" Type="Edm.String" MaxLength="30" sap:label="Status" sap:quickinfo="Object status"/><Property Name="CompanyCode" Type="Edm.String" MaxLength="4" sap:display-format="UpperCase" sap:label="Company code"
+					sap:quickinfo="Company code for the project"/><Property Name="CostCenter" Type="Edm.String" MaxLength="10" sap:display-format="UpperCase" sap:label="Profit Center"/><Property Name="LegalEntityCurrecny" Type="Edm.String" MaxLength="5" sap:label="Project Currency"
+					sap:quickinfo="WBS currency (project definition)" sap:semantics="currency-code"/><Property Name="StartDate" Type="Edm.DateTime" Precision="0" sap:display-format="Date" sap:label="Start date"
+					sap:quickinfo="Project planned start date"/><Property Name="Enddate" Type="Edm.DateTime" Precision="0" sap:display-format="Date" sap:label="Finish date"
+					sap:quickinfo="Project planned finish date"/><Property Name="PSAContractType" Type="Edm.String" MaxLength="50" sap:display-format="UpperCase" sap:label="PSA Contract type"
+					sap:quickinfo="PSA Contract Type"/><Property Name="QuarterContractSigned" Type="Edm.String" MaxLength="6" sap:display-format="UpperCase" sap:label="Quarter Contract Sig"
+					sap:quickinfo="Quarter Contract Signed"/><Property Name="Term" Type="Edm.String" MaxLength="4" sap:label="Term (Months)"/><Property Name="UIM_INFO" Type="Edm.String" sap:label="UIM Info" sap:visible="false" sap:updatable="false"/></EntityType>
+			<EntityContainer Name="ZFI_0262_DEF_REVENUE_SRV_Entities" m:IsDefaultEntityContainer="true" sap:message-scope-supported="true"
+				sap:supported-formats="atom json xlsx"><EntitySet Name="ZFI_COV_DEF_REVENUE" EntityType="ZFI_0262_DEF_REVENUE_SRV.ZFI_COV_DEF_REVENUEType" sap:creatable="false"
+				sap:updatable="false" sap:deletable="false" sap:content-version="1"/></EntityContainer>
+			<Annotations xmlns="http://docs.oasis-open.org/odata/ns/edm" Target="ZFI_0262_DEF_REVENUE_SRV.ZFI_0262_DEF_REVENUE_SRV_Entities">
+				<Annotation Term="Aggregation.ApplySupported">
+					<Record>
+						<PropertyValue Property="Transformations">
+							<Collection>
+								<String>aggregate</String>
+								<String>groupby</String>
+								<String>filter</String>
+							</Collection>
+						</PropertyValue><PropertyValue Property="Rollup" EnumMember="None"/></Record>
+				</Annotation>
+			</Annotations><atom:link xmlns:atom="http://www.w3.org/2005/Atom" rel="self" href="./sap/ZFI_0262_DEF_REVENUE_SRV/$metadata"/><atom:link xmlns:atom="http://www.w3.org/2005/Atom" rel="latest-version" href="./sap/ZFI_0262_DEF_REVENUE_SRV/$metadata"/></Schema>
+	</edmx:DataServices>
+</edmx:Edmx>
